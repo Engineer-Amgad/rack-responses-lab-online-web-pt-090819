@@ -4,12 +4,12 @@ class Application
     resp = Rack::Response.new
  
     t = Time.now
- 
+    t.hour
     resp.write "#{num_1}\n"
     resp.write "#{num_2}\n"
     resp.write "#{num_3}\n"
  
-    if num_1==num_2 && num_2==num_3
+    if t.hour < 12
       resp.write "You Win"
     else
       resp.write "You Lose"
